@@ -91,7 +91,7 @@ function animate() {
     player.stopMoving();
   }
 
-  if (keys.w.pressed && player.position.y + player.height === canvas.height) {
+  if (keys.space.pressed && player.position.y + player.height === canvas.height) {
     player.jump();
   }
 }
