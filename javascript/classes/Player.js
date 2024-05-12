@@ -29,11 +29,19 @@ class Player {
     }
   }
 
-  moveLeft() {
+  walkLeft() {
+    this.velocity.x = -2;
+  }
+
+  walkRight() {
+    this.velocity.x = 2;
+  }
+
+  runLeft() {
     this.velocity.x = -5;
   }
 
-  moveRight() {
+  runRight() {
     this.velocity.x = 5;
   }
 

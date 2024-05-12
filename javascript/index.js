@@ -23,6 +23,10 @@ const keys = {
   space: {
     code: "Space",
     pressed: false
+  },
+  shift: {
+    code: "ShiftLeft",
+    pressed: true
   }
 };
 
@@ -39,10 +43,14 @@ function animate() {
   clearCanvas();
   player.update();
 
-  if (keys.a.pressed) {
-    player.moveLeft();
+  if (keys.shift.pressed && keys.a.pressed) {
+    player.runLeft();
+  } else if (keys.shift.pressed && keys.d.pressed) {
+    player.runRight();
+  } else if (keys.a.pressed) {
+    player.walkLeft();
   } else if (keys.d.pressed) {
-    player.moveRight();
+    player.walkRight();
   } else {
     player.stopMoving();
   }
@@ -76,6 +84,10 @@ window.addEventListener("keydown", (event) => {
       keys.space.pressed = true;
       break;
 
+    case keys.shift.code:
+      keys.shift.pressed = true;
+      break;
+
     default:
       break;
   }
@@ -101,6 +113,10 @@ window.addEventListener("keyup", (event) => {
 
     case keys.space.code:
       keys.space.pressed = false;
+      break;
+
+    case keys.shift.code:
+      keys.shift.pressed = false;
       break;
 
     default:
