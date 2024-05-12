@@ -26,7 +26,7 @@ const keys = {
   },
   shift: {
     code: "ShiftLeft",
-    pressed: true
+    pressed: false
   }
 };
 
