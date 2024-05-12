@@ -1,0 +1,93 @@
+:root {
+  --background: #101010;
+  --text: #dddddd;
+
+  --hover-filter: brightness(0.85);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: none;
+  color: var(--text);
+}
+
+a:hover {
+  filter: var(--hover-filter);
+}
+
+body {
+  background-image: url("/images/kamurocho.png");
+  background-color: var(--background);
+  background-blend-mode: multiply;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2rem;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+#links {
+  display: flex;
+
+  gap: 1rem;
+
+  user-select: none;
+}
+
+#links > a {
+  display: block;
+  height: 2.5rem;
+}
+
+#links > a > img {
+  height: 2.5rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex: 1 1 auto;
+
+  padding: 4rem;
+  padding-top: 2rem;
+}
+
+canvas {
+  background-color: var(--background);
+
+  height: 100%;
+}
